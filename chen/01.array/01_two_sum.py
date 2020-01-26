@@ -7,22 +7,23 @@
 
 def find_sum_index(arr, target):
     sort_arr = sorted(arr)
+    print(arr)
     length = len(arr)
     # for i in range(length):
     left = 0
     right = length - 1
-    while (right > left):
-        sum = arr[left] + arr[right]
+    while right > left:
+        sum = sort_arr[left] + sort_arr[right]
         if sum == target:
-            if arr[left] == arr[right]:
-                return (-1, -1)
-            return (left, right)
+            if sort_arr[left] == sort_arr[right]:
+                return -1, -1
+            return sort_arr[left], sort_arr[right]
         elif sum < target:
             left += 1
         else:
             right -= 1
-    return (-1, -1)
+    return -1, -1
 
 
-src = [1, 2, 3, 4, 4, 5, 6, 7, 8, 9]
-print(find_sum_index(src, 13))
+src = [6, 1, 3, 4, 4, 5, 6, 7, 8, 9]
+print(find_sum_index(src, 15))
