@@ -7,12 +7,12 @@
 # 归并排序的一部分，其实是，从后面往前就可以了
 
 
-def merge_arr(nums01,len01, nums02):
+def merge_arr(nums01, len01, nums02):
     # len01 = len(nums01)
     len02 = len(nums02)
     right = len01 + len02 - 1
-    len01-=1
-    len02-=1
+    len01 -= 1
+    len02 -= 1
 
     while len01 >= 0 and len02 >= 0:
         # print(len02)
@@ -29,8 +29,9 @@ def merge_arr(nums01,len01, nums02):
         right -= 1
         len02 -= 1
 
-src01=[1,3,5,6,0,0,0,0,0,0,0]
-src02=[2,4,6,8]
 
-merge_arr(src01,4,src02)
+src01 = [1, 3, 5, 6, 0, 0, 0, 0, 0, 0, 0]
+src02 = [2, 4, 6, 8]
+
+merge_arr(src01, 4, src02)
 print(src01)
