@@ -24,3 +24,17 @@ class Solution:
         self.connect(root.left)
         self.connect(root.right)
         return root
+
+'''
+class Solution:
+    def connect(self, root: 'Node') -> 'Node':
+        level_first = root
+        while level_first:
+            curr = level_first
+            while curr:
+                if curr.left: curr.left.next = curr.right
+                if curr.right and curr.next: curr.right.next = curr.next.left
+                curr = curr.next
+            level_first = level_first.left
+        return root
+'''
